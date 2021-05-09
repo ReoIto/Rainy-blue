@@ -60,7 +60,7 @@ class LinebotController < ApplicationController
             per18to24 = doc.elements[xpath + 'info[3]/rainfallchance/period[4]l'].text
             if per06to12.to_i >= min_per || per12to18.to_i >= min_per || per18to24.to_i >= min_per
               push =
-                "明後日の天気だね!\n明後日は雨が降りそうなんだ…\n今のところの降水確率はこんな感じ。\n 6時〜12時 #{per06to12}％\n12時〜18時 #{per12to18}％\n18〜24時 #{per18to24}％\n当日の朝に雨が降りそうだったらまた教えるからね！\nホウレンソウ!"
+                "明後日の天気だね!\n明後日は雨が降りそうなんだ…\n今のところの降水確率はこんな感じ。\n　　  6〜12時　#{per06to12}％\n　　12〜18時　#{per12to18}％\n　　18〜24時　#{per18to24}％\n当日の朝に雨が降りそうだったらまた教えるからね！\nホウレンソウ!"
             else
               push =
                 "
