@@ -87,18 +87,20 @@ class LinebotController < ApplicationController
                 "まあ、雨が降らないという確証はないんだけどね"
                 ].sample
               push =
-                "今日の天気？\n[!朗報!]雨降らなそう!\n#{word}"
+                "今日の天気？\n[!朗報!] 雨降らなそう!\n#{word}"
             end
           end
 
         # テキスト以外（画像等）のメッセージが送られた場合
         else
-          push = "文字をplease!!!\nそれ以外はわからにゃい。"
+          push = "文字をplease!!!\nそれ以外はわからにゃい。\n残念だったな！"
         end
+
         message = {
           type: 'text',
           text: push
         }
+
         client.reply_message(event['replyToken'], message)
 
 
